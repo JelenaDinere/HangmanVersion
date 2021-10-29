@@ -16,7 +16,7 @@ public class Words {
 
 
     private static void generateWords() {
-        String[] words = new String[] {"ANSWER", "AUDIENCE",
+        String[] words = new String[] {"APPLE", "AUDIENCE",
                 "TEMPERATURE", "TRIANGLE",
                 "UNKNOWN", "WORKER", "YOUTHFUL"};
 
@@ -26,8 +26,9 @@ public class Words {
 
     public static String randomWord() {
         generateWords();
-        String hiddenWord= dictionary.get(0);
+        String hiddenWord= dictionary.get((0));
         return hiddenWord;
+//return (String) dictionary.get(random.nextInt(dictionary.size()));
     }
 
 

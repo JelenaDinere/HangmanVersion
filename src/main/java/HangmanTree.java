@@ -1,78 +1,69 @@
 public class HangmanTree {
     int maxErrors=5;
+    private static String switchMethod(int maxErrors) {
+        switch (maxErrors) {
+            case 1:
+                return drawFirst();
+            case 2:
+                return drawSecond();
+            case 3:
+                return drawHead();
+            case 4:
+                return drawBody();
+            case 5:
+                return drawHangman();
 
-    public void draw() {
-
-        if (maxErrors == 5) {
-            System.out.println(" _________     ");
-            System.out.println("|         |    ");
-            System.out.println("|         0    ");
-            System.out.println("|        /|\\  ");
-            System.out.println("|        / \\  ");
-            System.out.println("|              ");
-            System.out.println("|______________");
+            default:
+                return "Something is broken";
         }
-
-        if (maxErrors == 4) {
-            System.out.println(" _________     ");
-            System.out.println("|         |    ");
-            System.out.println("|         0    ");
-            System.out.println("|        /|\\  ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|______________");
-        }
-
-        if (maxErrors == 3) {
-            System.out.println(" _________     ");
-            System.out.println("|         |    ");
-            System.out.println("|         0    ");
-            System.out.println("|        /|\\  ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|______________");
-        }
-
-        if (maxErrors == 3) {
-            System.out.println(" _________     ");
-            System.out.println("|         |    ");
-            System.out.println("|         0    ");
-            System.out.println("|        / \\  ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|______________");
-        }
-
-        if (maxErrors == 2) {
-            System.out.println(" _________     ");
-            System.out.println("|         |    ");
-            System.out.println("|         0    ");
-            System.out.println("|        /     ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|______________");
-        }
-
-        if (maxErrors == 1) {
-            System.out.println(" _________     ");
-            System.out.println("|         |    ");
-            System.out.println("|         0    ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|______________");
-        }
-
-        if (maxErrors == 0) {
-            System.out.println(" _________     ");
-            System.out.println("|             ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|              ");
-            System.out.println("|______________");
-        }
-
     }
 
+
+
+    private static String drawHangman() {
+        return " _________     "+
+               "|         |    "+
+               "|         0    "+
+               "|        /|\\  "+
+               "|        / \\  "+
+               "|              "+
+               "|______________";
+        }
+    private static String drawBody() {
+        return " _________     "+
+                "|         |    "+
+                "|         0    "+
+                "|        /|\\  "+
+                "|              "+
+                "|              "+
+                "|______________";
+    }
+
+    private static String drawHead() {
+        return " _________     "+
+                "|         |    "+
+                "|         0    "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|______________";
+    }
+    private static String drawSecond() {
+        return " _________     "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|______________";
+    }
+    private static String drawFirst() {
+        return   "              "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|              "+
+                "|______________";
+    }
 }
