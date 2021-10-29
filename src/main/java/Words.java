@@ -3,16 +3,20 @@ import java.util.List;
 import java.util.Random;
 
 public class Words {
+
+    private String dashedWord;
+
     private static ArrayList<String> dictionary = new ArrayList<String>();
-    private static char[] lettersArr;
     private static Random random = new Random();
+
 
     public static ArrayList<String> getDictionary() {
         return dictionary;
     }
 
+
     private static void generateWords() {
-        String[] words = {"ANSWER", "AUDIENCE",
+        String[] words = new String[] {"ANSWER", "AUDIENCE",
                 "TEMPERATURE", "TRIANGLE",
                 "UNKNOWN", "WORKER", "YOUTHFUL"};
 
@@ -22,13 +26,17 @@ public class Words {
 
     public static String randomWord() {
         generateWords();
-        return dictionary.get(random.nextInt(dictionary.size()));
+        String hiddenWord= dictionary.get(random.nextInt(dictionary.size()));
+        return hiddenWord;
+    }
+
 
     }
 
 
 
-}
+
+
 
 
 

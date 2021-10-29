@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    List<Character> userGuesses = new ArrayList<>();
+
     Words words = new Words();
     Controller controller = new Controller();
 
@@ -50,22 +50,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("The word is:");
 //        HangmanTree hangmanTree = new HangmanTree();
-        String word = words.randomWord();
-        System.out.println(word);
-        printWord(word, userGuesses);
-
-    }
-
-
-    void printWord(String word, List<Character> userGuesses) {
-        for (int i = 0; i <= word.length(); i++) {
-            if (userGuesses.contains(word.charAt(i))) {
-                System.out.print(word.charAt(i));
-            } else {
-                System.out.print("_");
-            }
-
+        String currentWord = words.randomWord();
+        System.out.println(currentWord);
+        String userWord = scanner.nextLine();
+        for(int i = 0; i<= currentWord.length();i++)
+        userWord = userWord.concat("_");
+        System.out.println(userWord);
         }
+
     }
-}
+
+
+
 
