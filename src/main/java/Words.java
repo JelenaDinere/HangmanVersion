@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Words {
 
-    private String dashedWord;
+
 
     private static ArrayList<String> dictionary = new ArrayList<String>();
     private static Random random = new Random();
@@ -26,7 +26,7 @@ public class Words {
 
     public static String randomWord() {
         generateWords();
-        String hiddenWord= dictionary.get(random.nextInt(dictionary.size()));
+        String hiddenWord= dictionary.get(0);
         return hiddenWord;
     }
 
