@@ -1,76 +1,89 @@
 public class HangmanTree {
 
-    int maxErrors = 5;
+    public void draw(int currentError) {
 
-    public  String switchMethod(int maxErrors) {
-
-        switch (maxErrors) {
+        switch (currentError) {
             case 1:
-                return drawFirst();
+                drawFirst();
+                break;
             case 2:
-                return drawSecond();
+                drawSecond();
+                break;
             case 3:
-                return drawHead();
+                drawHead();
+                break;
             case 4:
-                return drawBody();
+                drawBody();
+                break;
             case 5:
-                return drawHangman();
+                drawHangman();
+                break;
             default:
-                return null;
+                System.out.println("");
+                break;
 
         }
 
     }
 
 
-    private static String drawHangman() {
-        return " \n _________     " +
+    private static void drawHangman() {
+        String man =
+                " \n _________     " +
                 "\n|         |    " +
                 "\n|         0    " +
                 "\n|        /|\\  " +
                 "\n|        / \\  " +
                 "\n|              " +
                 "\n|______________";
+        System.out.println(man);
     }
 
-    private static String drawBody() {
-        return " \n _________     " +
+    private static void drawBody() {
+        String man =
+                " \n _________     " +
                 "\n|         |    " +
                 "\n|         0    " +
                 "\n|        /|\\  " +
                 "\n|              " +
                 "\n|              " +
                 "\n|______________";
+        System.out.println(man);
     }
 
-    private static String drawHead() {
-        return " \n _________     " +
+    private static void drawHead() {
+        String man =
+                " \n _________     " +
                 "\n|         |    " +
                 "\n|         0    " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|______________";
+        System.out.println(man);
     }
 
-    private static String drawSecond() {
-        return " \n _________     " +
+    private static void drawSecond() {
+        String man =
+                " \n _________     " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|______________";
+        System.out.println(man);
     }
 
-    private static String drawFirst() {
-        return "\n|              " +
+    private static void drawFirst() {
+        String man = "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|______________";
+        System.out.println(man);
     }
 
 
