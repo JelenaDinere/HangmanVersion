@@ -1,6 +1,9 @@
 public class HangmanTree {
-    int maxErrors=5;
-    private static String switchMethod(int maxErrors) {
+
+    int maxErrors = 5;
+
+    public  String switchMethod(int maxErrors) {
+
         switch (maxErrors) {
             case 1:
                 return drawFirst();
@@ -12,58 +15,63 @@ public class HangmanTree {
                 return drawBody();
             case 5:
                 return drawHangman();
-
             default:
-                return "Something is broken";
-        }
-    }
+                return null;
 
+        }
+
+    }
 
 
     private static String drawHangman() {
-        return " _________     "+
-               "|         |    "+
-               "|         0    "+
-               "|        /|\\  "+
-               "|        / \\  "+
-               "|              "+
-               "|______________";
-        }
+        return " \n _________     " +
+                "\n|         |    " +
+                "\n|         0    " +
+                "\n|        /|\\  " +
+                "\n|        / \\  " +
+                "\n|              " +
+                "\n|______________";
+    }
+
     private static String drawBody() {
-        return " _________     "+
-                "|         |    "+
-                "|         0    "+
-                "|        /|\\  "+
-                "|              "+
-                "|              "+
-                "|______________";
+        return " \n _________     " +
+                "\n|         |    " +
+                "\n|         0    " +
+                "\n|        /|\\  " +
+                "\n|              " +
+                "\n|              " +
+                "\n|______________";
     }
 
     private static String drawHead() {
-        return " _________     "+
-                "|         |    "+
-                "|         0    "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|______________";
+        return " \n _________     " +
+                "\n|         |    " +
+                "\n|         0    " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|______________";
     }
+
     private static String drawSecond() {
-        return " _________     "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|______________";
+        return " \n _________     " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|______________";
     }
+
     private static String drawFirst() {
-        return   "              "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|              "+
-                "|______________";
+        return "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|              " +
+                "\n|______________";
     }
+
+
 }

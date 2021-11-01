@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-
+    private int mistakes = 0;
     private String currentWord;
     private String userWord = "";
     private String userInput = "";
@@ -11,11 +11,12 @@ public class Main {
 
     Words words = new Words();
     Game game = new Game();
-    HangmanTree hangmanTree =new HangmanTree();
+    HangmanTree hangmanTree = new HangmanTree();
 
     public static void main(String[] args) {
         Main main = new Main();
         main.showMenu();
+
     }
 
     void showMenu() {
@@ -36,7 +37,6 @@ public class Main {
                     break;
                 case "play":
                     System.out.println("New game");
-                    System.out.println("There is the option to guess whole word or a single letter");
                     playGame();
                     break;
                 default:
@@ -61,6 +61,7 @@ public class Main {
 
     private void newStep() {
         boolean foundLetter = false;
+
         if (userInput.length() == 1) {
             System.out.println("This is a letter");
             char[] currentWordArray = currentWord.toCharArray();
@@ -71,27 +72,48 @@ public class Main {
                     userWordArray[i] = userInput.charAt(0);
                     userWord = new String(userWordArray);
                     foundLetter = true;
+                    System.out.println("Correct guess");
                 }
 
             }
             if (!foundLetter) {
                 System.out.println("Incorrect letter and try again");
+                mistakes++;
+                String wrongL = hangmanTree.switchMethod(mistakes);
+                System.out.println(wrongL);
 
             }
+            if (mistakes == 5) {
+                System.out.println("Game Over");
+                System.out.println("The correct word was: " + currentWord);
+                System.out.println("Would you like to play again??: Y/N");
+                String answer = scanner.nextLine().toLowerCase();
+                if (answer.equals("y")) {
+                    gameStarted = true;
 
-            if (userInput.length() == currentWord.length()) {
-                System.out.println("This is a word");
-                if (userInput.equals(currentWord)) {
-                    System.out.println("Correct!!");
+                } else {
+                    System.out.println("Exiting Application");
+
                 }
+
             }
-
-            System.out.println(userWord);
-
-            //
         }
-    }
-}
+
+                if (userInput.length() == currentWord.length()) {
+                    System.out.println("This is a word");
+                    if (userInput.equals(currentWord)) {
+                        System.out.println("Correct!!");
+                    }
+                }
+
+                System.out.println(userWord);
+
+
+            }
+        }
+
+
+
 
 
 
