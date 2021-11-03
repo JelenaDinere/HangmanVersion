@@ -76,7 +76,8 @@ public class HangmanTree {
     }
 
     private static void drawFirst() {
-        String man = "\n|              " +
+        String man =
+                "\n|              " +
                 "\n|              " +
                 "\n|              " +
                 "\n|              " +

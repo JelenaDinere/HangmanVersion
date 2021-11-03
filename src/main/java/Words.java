@@ -16,7 +16,7 @@ public class Words {
 
 
     private static void generateWords() {
-        String[] words = new String[] {"APPLE","ORANGE",
+        String[] words = new String[]{"APPLE","ORANGE",
                 "PINEAPPLE", "MELON",
                 "MANGO", "BANANA", "PEAR"};
 
