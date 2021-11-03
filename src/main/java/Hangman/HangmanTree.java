@@ -1,3 +1,5 @@
+package Hangman;
+
 public class HangmanTree {
 
     public void draw(int currentError) {

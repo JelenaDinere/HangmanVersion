@@ -1,3 +1,6 @@
+import Hangman.HangmanTree;
+import Hangman.Words;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -27,8 +30,8 @@ public class Main {
         do {
             if (!gameStarted) {
                 System.out.println("\nWelcome to Hangman, are you ready to play?");
-                System.out.println("\n 1. Play to start game");
-                System.out.println("\n 2. Quit to end program...");
+                System.out.println("\n Play to start game");
+                System.out.println("\n Quit to end program...");
 
                 System.out.println("Choose an option");
             }
@@ -36,10 +39,14 @@ public class Main {
             userInput = scanner.nextLine();
 
             switch (userInput) {
-                case "2":
+                case "quit":
+                case "Quit":
+                case "QUIT":
                     System.out.println("Exiting Application");
                     break;
-                case "1":
+                case "play":
+                case "Play":
+                case "PLAY":
                     System.out.println("New game");
                     playGame();
                     break;
